@@ -142,6 +142,10 @@ public class CardShark {
             System.out.println("Jugador: "+j.getId()+ " puntos: "+j.getPuntuacion());
         }
     }
+    /**
+     * main
+     * @param args 
+     */
     public static void main(String[] args) {
         int numeroDeJugadores;
         Scanner sc =new Scanner(System.in);
