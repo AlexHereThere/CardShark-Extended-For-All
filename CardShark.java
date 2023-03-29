@@ -16,14 +16,14 @@ public class CardShark {
         for(int i=0; i < this.cantidadDeJugadores; i++) {
             jugadores.add(new Jugador(i+1));
         }
-        barajas_a_agregar=cantidadDeJugadores/3;
-        for(int i=0;i<barajas_a_agregar;i++){// el iterador empieza con uno por que al principio ya se genera la primer baraja
-        b.agregarOtraBaraja();//si barajas a generar es mayor que uno, se generan los extras.
+        barajas_a_agregar=cantidadDeJugadores/3;//determina cuantas barajas extras se haran
+        for(int i=0;i<barajas_a_agregar;i++){
+        b.agregarOtraBaraja();//los genera ciclicamente
         }
         b.barajar();
         reparteCartas();
         juega();
-        
+       
     }
     /**
      * ya no se presentan las cartas de los jugadores aqui
@@ -57,12 +57,11 @@ public class CardShark {
          especificarGanadores();
     }
 /**
- * los hice void
+ * los hice void, como ya no se ocupa determinar si seguir jugando por la falta de cartas
  */
     private void jugarRonda(){
       for(Jugador j : this.jugadores) {
           if(j.lanzarUnaCarta() == null)
-          
           System.out.println(j.getCartaLanzada());  
       }
       comparaCartas();
