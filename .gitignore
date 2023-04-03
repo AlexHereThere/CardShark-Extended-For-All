@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 *.class
+=======
+.netbeans*
+*.class
+nbproject
+*.mf
+dist
+build
+*.xml
+>>>>>>> 6c5a9fb (tercera version: inclusion de los test)
