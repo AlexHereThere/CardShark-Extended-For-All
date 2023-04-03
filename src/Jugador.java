@@ -13,12 +13,15 @@ class Jugador {
         this.cartaLanzada = null;
         this.id = id;
         dado=new Dado(5,1);//los dados de los jugadores deben tener 5 caras en el juego
+        puntuacion=0;
     } 
 
-    public Jugador(int id, ArrayList<Carta> mano) {
+    public Jugador(int id, ArrayList<Carta> mano,int numeroDeCaras) {
         this.mano = mano;
         this.cartaLanzada = null;
         this.id = id;
+        dado=new Dado(numeroDeCaras,1);//los dados de los jugadores deben tener 5 caras en el juego
+        puntuacion=0;
     }
 
     /*

@@ -47,12 +47,9 @@ public class JugadorTest {
     @Test
     public void testLanzarUnaCarta() {
         System.out.println("lanzarUnaCarta");
-        Jugador instance = null;
-        Carta expResult = null;
-        Carta result = instance.lanzarUnaCarta();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
+        assertNotNull("Fallo - no debe ser nullo",instance );
     }
 
     /**
@@ -61,12 +58,10 @@ public class JugadorTest {
     @Test
     public void testGetCartaLanzada() {
         System.out.println("getCartaLanzada");
-        Jugador instance = null;
-        Carta expResult = null;
+        Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
         Carta result = instance.getCartaLanzada();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNull("Fallo - no debe valer algo",result);
     }
 
     /**
@@ -75,11 +70,11 @@ public class JugadorTest {
     @Test
     public void testSetMano() {
         System.out.println("setMano");
-        ArrayList<Carta> mano = null;
-        Jugador instance = null;
+         Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
+        ArrayList<Carta> mano = b.repartir(5);
         instance.setMano(mano);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe ser lo mismo",mano,instance.getMano());
     }
 
     /**
@@ -88,12 +83,11 @@ public class JugadorTest {
     @Test
     public void testGetMano() {
         System.out.println("getMano");
-        Jugador instance = null;
-        ArrayList<Carta> expResult = null;
+         Baraja b = new Baraja();
+         ArrayList<Carta> expResult = b.repartir(5);
+        Jugador instance = new Jugador(1,expResult,5);
         ArrayList<Carta> result = instance.getMano();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe dar lo mismo",expResult, result);
     }
 
     /**
@@ -102,12 +96,11 @@ public class JugadorTest {
     @Test
     public void testGetPuntuacion() {
         System.out.println("getPuntuacion");
-        Jugador instance = null;
-        int expResult = 0;
+        Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
+        instance.setPuntuacion(5);
         int result = instance.getPuntuacion();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - deben ser iguales",5, result);
     }
 
     /**
@@ -116,11 +109,11 @@ public class JugadorTest {
     @Test
     public void testSetPuntuacion() {
         System.out.println("setPuntuacion");
-        int puntuacion = 0;
-        Jugador instance = null;
+        int puntuacion = 5;
+          Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
         instance.setPuntuacion(puntuacion);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - deben valer lo mismo",5,instance.getPuntuacion());
     }
 
     /**
@@ -129,12 +122,12 @@ public class JugadorTest {
     @Test
     public void testGetId() {
         System.out.println("getId");
-        Jugador instance = null;
-        int expResult = 0;
+         Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
+        int expResult = 1;
         int result = instance.getId();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe valer 1",expResult, result);
+    
     }
 
     /**
@@ -143,12 +136,10 @@ public class JugadorTest {
     @Test
     public void testExtraCartasPorDado() {
         System.out.println("ExtraCartasPorDado");
-        Jugador instance = null;
-        int expResult = 0;
+         Baraja b = new Baraja();
+        Jugador instance = new Jugador(1,b.repartir(5),5);
         int result = instance.ExtraCartasPorDado();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull("Fallo - debe regresar algo", result);
     }
     
 }

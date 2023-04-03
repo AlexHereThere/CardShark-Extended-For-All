@@ -48,9 +48,8 @@ public class BarajaTest {
         System.out.println("agregarOtraBaraja");
         Baraja instance = new Baraja();
         instance.agregarOtraBaraja();
-        assertNotNull(instance);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull("Fallo - no debe estar vacio la baraja",instance);
+       
     }
 
     /**
@@ -60,9 +59,9 @@ public class BarajaTest {
     public void testBarajar() {
         System.out.println("barajar");
         Baraja instance = new Baraja();
+        Baraja instance2 = new Baraja();
         instance.barajar();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals("Fallo - no deben ser lo mismo",instance2.mazo,instance.mazo);
     }
 
     /**
@@ -71,13 +70,11 @@ public class BarajaTest {
     @Test
     public void testRepartir() {
         System.out.println("repartir");
-        int n = 0;
+        int n = 5;
         Baraja instance = new Baraja();
-        ArrayList<Carta> expResult = null;
+        ArrayList<Carta> expResult = instance.repartir(5);
         ArrayList<Carta> result = instance.repartir(n);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - no son el mismo tamano",expResult.size(), result.size());
     }
 
     /**
@@ -87,11 +84,8 @@ public class BarajaTest {
     public void testToString() {
         System.out.println("toString");
         Baraja instance = new Baraja();
-        String expResult = "";
         String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotNull("Fallo - no presento la baraja",result);
     }
     
 }

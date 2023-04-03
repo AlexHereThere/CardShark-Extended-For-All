@@ -45,11 +45,10 @@ public class DadoTest {
     @Test
     public void testSetNumeroDeCaras() {
         System.out.println("setNumeroDeCaras");
-        int numeroDeCaras = 0;
+        int numeroDeCaras = 6;
         Dado instance = new Dado();
         instance.setNumeroDeCaras(numeroDeCaras);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe dar que son lo mismo",6,instance.getNumeroDeCaras());
     }
 
     /**
@@ -58,11 +57,11 @@ public class DadoTest {
     @Test
     public void testSetCaraVisible() {
         System.out.println("setCaraVisible");
-        int caraVisible = 0;
+        int caraVisible = 3;
         Dado instance = new Dado();
         instance.setCaraVisible(caraVisible);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       assertEquals("Fallo - debe ser lo mismo",3,instance.getCaraVisible());
     }
 
     /**
@@ -72,11 +71,9 @@ public class DadoTest {
     public void testGetNumeroDeCaras() {
         System.out.println("getNumeroDeCaras");
         Dado instance = new Dado();
-        int expResult = 0;
+        int expResult = 6;
         int result = instance.getNumeroDeCaras();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe iniciar con 6",expResult, result);
     }
 
     /**
@@ -86,11 +83,9 @@ public class DadoTest {
     public void testGetCaraVisible() {
         System.out.println("getCaraVisible");
         Dado instance = new Dado();
-        int expResult = 0;
+        int expResult = 1;
         int result = instance.getCaraVisible();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe iniciar en 1",expResult, result);
     }
 
     /**
@@ -100,9 +95,9 @@ public class DadoTest {
     public void testGirarDado() {
         System.out.println("girarDado");
         Dado instance = new Dado();
+        Dado instance2 = new Dado();
         instance.girarDado();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNotEquals("Fallo - debe ser diferente",instance2,instance);
     }
 
     /**
@@ -112,11 +107,9 @@ public class DadoTest {
     public void testToString() {
         System.out.println("toString");
         Dado instance = new Dado();
-        String expResult = "";
+        String expResult = "Numero De Caras:"+instance.getNumeroDeCaras()+" Cara Mostrada:"+instance.getCaraVisible();
         String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe presentar bien el dado",expResult, result);
     }
     
 }

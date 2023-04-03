@@ -21,12 +21,14 @@ public class RootSuite {
    
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("");
         System.out.println("--PRUEBO CLASE->");
     }
     
     @AfterClass
     public static void tearDownClass() {
         System.out.println("<-TERMINA CLASE--");
+        System.out.println("");
     }
     
     @Before

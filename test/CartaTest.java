@@ -42,73 +42,67 @@ public class CartaTest {
 
     /**
      * Test of getValor method, of class Carta.
+     * 
+     * @throws FueraDeRangoException
      */
     @Test
-    public void testGetValor() {
+    public void testGetValor() throws FueraDeRangoException {
         System.out.println("getValor");
-        Carta instance = null;
-        int expResult = 0;
+        Carta instance = new Carta(6,Figura.CORAZONES);
+        int expResult = 6;
         int result = instance.getValor();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe valer lo mismo",expResult,result);
     }
 
     /**
      * Test of getFigura method, of class Carta.
+     * @throws FueraDeRangoException
      */
     @Test
-    public void testGetFigura() {
+    public void testGetFigura() throws FueraDeRangoException {
         System.out.println("getFigura");
-        Carta instance = null;
-        Figura expResult = null;
+        Carta instance = new Carta(6,Figura.CORAZONES);
+        Figura expResult = Figura.CORAZONES;
         Figura result = instance.getFigura();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe ser de la misma figura",expResult,result);
     }
 
     /**
      * Test of getColor method, of class Carta.
+     * @throws FueraDeRangoException
      */
     @Test
-    public void testGetColor() {
+    public void testGetColor() throws FueraDeRangoException {
         System.out.println("getColor");
-        Carta instance = null;
-        Color expResult = null;
+        Carta instance = new Carta(6,Figura.CORAZONES);
+        Color expResult = Color.ROJO;
         Color result = instance.getColor();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe ser del mismo color",expResult, result);
     }
 
     /**
      * Test of toString method, of class Carta.
+     * @throws FueraDeRangoException
      */
     @Test
-    public void testToString() {
+    public void testToString() throws FueraDeRangoException {
         System.out.println("toString");
-        Carta instance = null;
-        String expResult = "";
-        String result = instance.toString();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Carta instance = new Carta(6,Figura.CORAZONES);
+        String result= instance.toString();
+        assertNotNull("Fallo - debe regresar algo toString", result);
     }
 
     /**
      * Test of compareTo method, of class Carta.
+     * @throws FueraDeRangoException
      */
     @Test
-    public void testCompareTo() {
+    public void testCompareTo() throws FueraDeRangoException{
         System.out.println("compareTo");
-        Carta o = null;
-        Carta instance = null;
-        int expResult = 0;
+        Carta o = new Carta(6,Figura.CORAZONES);
+        Carta instance = new Carta(8,Figura.DIAMANTES);
         int result = instance.compareTo(o);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe regresar mayor que el otro", 1,result);
     }
     
 }

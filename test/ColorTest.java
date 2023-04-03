@@ -21,6 +21,7 @@ public class ColorTest {
     
     @BeforeClass
     public static void setUpClass() {
+        System.out.println("");
         System.out.println("--PRUEBO CLASE->");
     }
     
@@ -45,11 +46,9 @@ public class ColorTest {
     @Test
     public void testValues() {
         System.out.println("values");
-        Color[] expResult = null;
+        Color[] expResult = {Color.ROJO,Color.NEGRO} ;
         Color[] result = Color.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertArrayEquals("Fallo - debe ser lo mismo",expResult, result);
     }
 
     /**
@@ -58,12 +57,10 @@ public class ColorTest {
     @Test
     public void testValueOf() {
         System.out.println("valueOf");
-        String string = "";
-        Color expResult = null;
+        String string = "ROJO";
+        Color expResult = Color.ROJO;
         Color result = Color.valueOf(string);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe valer lo mismo",expResult, result);
     }
     
 }

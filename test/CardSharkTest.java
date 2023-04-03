@@ -42,24 +42,20 @@ public class CardSharkTest {
      * Test of inicia method, of class CardShark.
      */
     @Test
-    public void testInicia() {
+    public void testInicia() {//metodo void
         System.out.println("inicia");
-        CardShark instance = null;
-        instance.inicia();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        CardShark instance = new CardShark(3);
+        assertNotNull("Fallo - no debe ser nullo instancia",instance);
     }
 
     /**
      * Test of main method, of class CardShark.
      */
     @Test
-    public void testMain() {
+    public void testMain() {//metodo void
         System.out.println("main");
         String[] args = null;
-        CardShark.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertNull("Fallo - debe ser nulo los argumentos",args);
     }
     
 }

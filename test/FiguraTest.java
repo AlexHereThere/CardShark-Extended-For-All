@@ -46,11 +46,9 @@ public class FiguraTest {
     @Test
     public void testValues() {
         System.out.println("values");
-        Figura[] expResult = null;
+        Figura[] expResult = {Figura.CORAZONES,Figura.PICAS,Figura.DIAMANTES,Figura.TREBOLES};
         Figura[] result = Figura.values();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertArrayEquals("Fallo - debe tener lo mismo",expResult, result);
     }
 
     /**
@@ -59,12 +57,11 @@ public class FiguraTest {
     @Test
     public void testValueOf() {
         System.out.println("valueOf");
-        String string = "";
-        Figura expResult = null;
+        String string = "CORAZONES";
+        Figura expResult = Figura.CORAZONES;
         Figura result = Figura.valueOf(string);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals("Fallo - debe valer lo mismo",expResult,result);
     }
     
 }

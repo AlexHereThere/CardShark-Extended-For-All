@@ -27,7 +27,7 @@ public class FueraDeRangoExceptionTest {
     
     @AfterClass
     public static void tearDownClass() {
-        System.out.println("<-TERMINA CLASE--");
+        System.out.println("<-TERMINA CLASE--");   
     }
     
     @Before
@@ -42,8 +42,8 @@ public class FueraDeRangoExceptionTest {
 
     @Test
     public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        FueraDeRangoException ex = new FueraDeRangoException("hola");
+        assertNotNull("Fallo - debe regresar algo",ex);
     }
     
 }
